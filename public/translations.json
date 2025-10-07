@@ -1,0 +1,146 @@
+{
+  "en": {
+    "nav": {
+      "personalBanking": "Personal Banking",
+      "businessBanking": "Business Banking",
+      "digitalBanking": "Digital Banking",
+      "investmentWealth": "Investment & Wealth",
+      "support": "Support"
+    },
+    "home": {
+      "heroTitle": "Welcome to Modern Banking",
+      "heroSubtitle": "Secure, innovative, and always by your side",
+      "trustTitle": "Trusted by Millions",
+      "trustSubtitle": "Regulated by:",
+      "getStarted": "Get Started",
+      "learnMore": "Learn More",
+      "openAccount": "Open an Account",
+      "login": "Login"
+    },
+    "header": {
+      "secureConnection": "Secure Connection",
+      "online": "Online",
+      "offline": "Offline",
+      "session": "Session"
+    },
+    "footer": {
+      "contact": "Contact Us",
+      "headOffice": "Head Office",
+      "phone": "Phone",
+      "email": "Email",
+      "quickLinks": "Quick Links",
+      "legal": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions",
+      "copyright": "All rights reserved."
+    }
+  },
+  "es": {
+    "nav": {
+      "personalBanking": "Banca Personal",
+      "businessBanking": "Banca Empresarial",
+      "digitalBanking": "Banca Digital",
+      "investmentWealth": "Inversión y Riqueza",
+      "support": "Soporte"
+    },
+    "home": {
+      "heroTitle": "Bienvenido a la Banca Moderna",
+      "heroSubtitle": "Seguro, innovador y siempre a tu lado",
+      "trustTitle": "Confiado por Millones",
+      "trustSubtitle": "Regulado por:",
+      "getStarted": "Comenzar",
+      "learnMore": "Saber Más",
+      "openAccount": "Abrir una Cuenta",
+      "login": "Iniciar Sesión"
+    },
+    "header": {
+      "secureConnection": "Conexión Segura",
+      "online": "En Línea",
+      "offline": "Desconectado",
+      "session": "Sesión"
+    },
+    "footer": {
+      "contact": "Contáctenos",
+      "headOffice": "Oficina Principal",
+      "phone": "Teléfono",
+      "email": "Correo",
+      "quickLinks": "Enlaces Rápidos",
+      "legal": "Legal",
+      "privacy": "Política de Privacidad",
+      "terms": "Términos y Condiciones",
+      "copyright": "Todos los derechos reservados."
+    }
+  },
+  "fr": {
+    "nav": {
+      "personalBanking": "Banque Personnelle",
+      "businessBanking": "Banque d'Affaires",
+      "digitalBanking": "Banque Numérique",
+      "investmentWealth": "Investissement et Patrimoine",
+      "support": "Soutien"
+    },
+    "home": {
+      "heroTitle": "Bienvenue dans la Banque Moderne",
+      "heroSubtitle": "Sécurisé, innovant et toujours à vos côtés",
+      "trustTitle": "Fait Confiance par des Millions",
+      "trustSubtitle": "Réglementé par:",
+      "getStarted": "Commencer",
+      "learnMore": "En Savoir Plus",
+      "openAccount": "Ouvrir un Compte",
+      "login": "Se Connecter"
+    },
+    "header": {
+      "secureConnection": "Connexion Sécurisée",
+      "online": "En Ligne",
+      "offline": "Hors Ligne",
+      "session": "Session"
+    },
+    "footer": {
+      "contact": "Nous Contacter",
+      "headOffice": "Siège Social",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "quickLinks": "Liens Rapides",
+      "legal": "Juridique",
+      "privacy": "Politique de Confidentialité",
+      "terms": "Termes et Conditions",
+      "copyright": "Tous droits réservés."
+    }
+  },
+  "de": {
+    "nav": {
+      "personalBanking": "Privatkundengeschäft",
+      "businessBanking": "Firmenkundengeschäft",
+      "digitalBanking": "Digitales Banking",
+      "investmentWealth": "Investition und Vermögen",
+      "support": "Unterstützung"
+    },
+    "home": {
+      "heroTitle": "Willkommen beim Modernen Banking",
+      "heroSubtitle": "Sicher, innovativ und immer an Ihrer Seite",
+      "trustTitle": "Vertraut von Millionen",
+      "trustSubtitle": "Reguliert durch:",
+      "getStarted": "Loslegen",
+      "learnMore": "Mehr Erfahren",
+      "openAccount": "Konto Eröffnen",
+      "login": "Anmelden"
+    },
+    "header": {
+      "secureConnection": "Sichere Verbindung",
+      "online": "Online",
+      "offline": "Offline",
+      "session": "Sitzung"
+    },
+    "footer": {
+      "contact": "Kontaktieren Sie Uns",
+      "headOffice": "Hauptsitz",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "quickLinks": "Schnelllinks",
+      "legal": "Rechtliches",
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Geschäftsbedingungen",
+      "copyright": "Alle Rechte vorbehalten."
+    }
+  }
+}

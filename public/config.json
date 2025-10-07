@@ -1,0 +1,22 @@
+{
+  "bankName": "Trucore Digital",
+  "bankTitle": "Trucore Digital - Modern Banking Solutions",
+  "contact": {
+    "headOffice": "United States",
+    "phones": ["+44 20 7946 0958", "+44 20 7946 0959"],
+    "email": "support@trucore.digital"
+  },
+  "smartsuppKey": "5ea213a490bc0b5894394cf615d3f0e788e5a261",
+  "userLoginUrl": "https://e.trucore.digital/user/login",
+  "userRegistrationUrl": "https://e.trucore.digital/user/register",
+  "security": {
+    "sslEncryption": "256-bit SSL"
+  },
+  "regulations": ["FCA", "PRA", "FDIC", "SEC"],
+  "socialMedia": {
+    "facebook": "#",
+    "twitter": "#",
+    "linkedin": "#",
+    "instagram": "#"
+  }
+}
