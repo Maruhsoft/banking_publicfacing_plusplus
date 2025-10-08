@@ -3,6 +3,12 @@ import { useApp } from '../contexts/AppContext';
 import { Link } from '../router/Router';
 import { HeroCarousel } from '../components/HeroCarousel';
 import { SecureVaultIcon, MoneyTransferIcon, InvestmentGrowthIcon, ShieldCheckIcon } from '../components/BankingIcons';
+import { TestimonialCard } from '../components/TestimonialCard';
+import { ComparisonTable } from '../components/ComparisonTable';
+import { StatCounter } from '../components/StatCounter';
+import { InteractiveCalculator } from '../components/InteractiveCalculator';
+import { ProcessSteps } from '../components/ProcessSteps';
+import { BenefitCard } from '../components/BenefitCard';
 import {
   Shield,
   TrendingUp,
@@ -18,6 +24,16 @@ import {
   Globe,
   Clock,
   Zap,
+  FileText,
+  UserPlus,
+  CheckSquare,
+  Banknote,
+  PiggyBank,
+  Wallet,
+  BarChart3,
+  Briefcase,
+  HandCoins,
+  Landmark,
 } from 'lucide-react';
 
 export function Home() {
@@ -150,6 +166,115 @@ export function Home() {
       icon: Zap,
       title: 'Instant Transfers',
       description: 'Move money in seconds',
+    },
+  ];
+
+  const openingSteps = [
+    {
+      number: 1,
+      title: 'Choose Account',
+      description: 'Select the account type that best fits your financial needs',
+      icon: FileText,
+    },
+    {
+      number: 2,
+      title: 'Fill Application',
+      description: 'Complete our secure online application in just 5 minutes',
+      icon: UserPlus,
+    },
+    {
+      number: 3,
+      title: 'Verify Identity',
+      description: 'Upload your ID and verify your identity quickly and securely',
+      icon: CheckSquare,
+    },
+    {
+      number: 4,
+      title: 'Start Banking',
+      description: 'Fund your account and start enjoying our banking services',
+      icon: Banknote,
+    },
+  ];
+
+  const testimonials: TestimonialProps[] = [
+  {
+    name: "Sophia",
+    role: "Retail Banking Client",
+    content:
+      "Opening an account took less than five minutes on my phone. Transfers are instant, and the notifications keep me in control of my spending.",
+  },
+  {
+    name: "Liam",
+    role: "Small Business Owner – Tech Supply Co.",
+    content:
+      "Their business dashboard has simplified how I pay suppliers and reconcile transactions. I no longer queue at the branch — everything is handled online securely.",
+  },
+  {
+    name: "Olivia",
+    role: "CFO, Horizon Foods",
+    content:
+      "The bulk payment feature and scheduled transfers have saved our finance team hours every week. We also appreciate the quick support whenever we raise a ticket.",
+  },
+  {
+    name: "Ethan",
+    role: "Corporate Client – Logistics Sector",
+    content:
+      "We’ve integrated their API into our invoicing system to automate collections. Settlement is same-day, which has improved our cash-flow visibility.",
+  },
+  {
+    name: "Ava",
+    role: "Treasury Manager, Summit Energy",
+    content:
+      "Their secure virtual cards have been a game-changer for managing departmental expenses — we now set monthly limits and track usage in real time.",
+  },
+  {
+    name: "Noah",
+    role: "Freelancer & Remittance User",
+    content:
+      "Receiving payments from clients abroad is faster and cheaper than with traditional banks. Currency conversion is transparent and updates instantly.",
+  },
+  {
+    name: "Emma",
+    role: "Customer Support Manager, PrimeTech Ltd",
+    content:
+      "As a payroll customer, I’m impressed by how seamlessly the system handles large salary disbursements. Staff get alerts immediately, and reconciliation is effortless.",
+  },
+  {
+    name: "James",
+    role: "Retail Client – Long-term Saver",
+    content:
+      "The savings vault feature helps me lock funds aside for emergencies while still earning interest. I like that I can track everything from my mobile app.",
+  },
+];
+
+  const benefits = [
+    {
+      icon: PiggyBank,
+      title: 'High-Yield Savings',
+      description: 'Grow your wealth with competitive interest rates up to 4.5% APY',
+      color: 'green' as const,
+      features: ['No minimum balance', 'Compound interest daily', 'Easy withdrawals'],
+    },
+    {
+      icon: CreditCard,
+      title: 'Rewards Credit Cards',
+      description: 'Earn cashback and points on every purchase you make',
+      color: 'blue' as const,
+      features: ['3% cashback on purchases', 'Travel insurance included', 'Zero annual fee first year'],
+    },
+    {
+      icon: Smartphone,
+      title: 'Mobile Banking',
+      description: 'Bank on the go with our award-winning mobile app',
+      color: 'purple' as const,
+      features: ['Instant transfers', 'Mobile check deposit', 'Biometric security'],
+    },
+    {
+      icon: BarChart3,
+      title: 'Investment Tools',
+      description: 'Access professional investment advice and tools',
+      color: 'orange' as const,
+      features: ['Portfolio management', 'Real-time market data', 'Expert advisory'],
     },
   ];
 
@@ -366,6 +491,189 @@ export function Home() {
               Learn About Our Security
               <ArrowRight className="w-5 h-5" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Exclusive Banking Benefits</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Experience premium benefits designed to maximize your financial potential
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, idx) => (
+              <BenefitCard key={idx} {...benefit} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Calculator Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Calculate Your Savings Growth</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              See how much you could earn with our competitive interest rates
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <InteractiveCalculator />
+          </div>
+        </div>
+      </section>
+
+      {/* Opening Steps Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Open Your Account in Minutes</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Fast, simple, and secure account opening process
+            </p>
+          </div>
+          <ProcessSteps steps={openingSteps} />
+        </div>
+      </section>
+
+      {/* Comparison Table Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Compare Account Types</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Find the perfect account that matches your banking needs
+            </p>
+          </div>
+          <div className="max-w-6xl mx-auto">
+            <ComparisonTable />
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What Our Customers Say</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Real stories from satisfied customers who trust us with their finances
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, idx) => (
+              <TestimonialCard key={idx} {...testimonial} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Counter Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Banking by the Numbers</h2>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+              Join millions of satisfied customers worldwide
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <StatCounter end={2000000} suffix="+" label="Active Customers" icon={Users} />
+            <StatCounter end={50} suffix="B+" prefix="$" label="Assets Under Management" icon={Landmark} />
+            <StatCounter end={150} suffix="+" label="Countries Served" icon={Globe} />
+            <StatCounter end={25} suffix="+" label="Years of Excellence" icon={Award} />
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Additional Services</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Comprehensive financial solutions for all your needs
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                <Wallet className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Personal Loans</h3>
+              <p className="text-slate-600 mb-4">Flexible loan options with competitive rates starting from 5.99% APR</p>
+              <ul className="space-y-2 mb-4">
+                <li className="flex items-center gap-2 text-sm text-slate-700">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  Quick approval process
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-700">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  No hidden fees
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-700">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  Flexible repayment terms
+                </li>
+              </ul>
+              <Link to="/personal-banking/loans" className="text-blue-600 font-medium flex items-center gap-2 hover:gap-3 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
+                <Briefcase className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Business Banking</h3>
+              <p className="text-slate-600 mb-4">Powerful tools and services to help your business thrive and grow</p>
+              <ul className="space-y-2 mb-4">
+                <li className="flex items-center gap-2 text-sm text-slate-700">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  Business checking accounts
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-700">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  Merchant services
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-700">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  Payroll solutions
+                </li>
+              </ul>
+              <Link to="/business-banking/sme" className="text-blue-600 font-medium flex items-center gap-2 hover:gap-3 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
+                <HandCoins className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">Wealth Management</h3>
+              <p className="text-slate-600 mb-4">Expert guidance to help you build and preserve your wealth</p>
+              <ul className="space-y-2 mb-4">
+                <li className="flex items-center gap-2 text-sm text-slate-700">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  Investment advisory
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-700">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  Retirement planning
+                </li>
+                <li className="flex items-center gap-2 text-sm text-slate-700">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  Estate planning
+                </li>
+              </ul>
+              <Link to="/investment-wealth/advisory" className="text-blue-600 font-medium flex items-center gap-2 hover:gap-3 transition-all">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

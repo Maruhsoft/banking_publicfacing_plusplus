@@ -100,3 +100,67 @@ export function ShieldCheckIcon({ className = "w-16 h-16" }: { className?: strin
     </svg>
   );
 }
+
+export function GlobalBankingIcon({ className = "w-16 h-16" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="35" fill="#3b82f6" stroke="#1e40af" strokeWidth="2"/>
+      <ellipse cx="50" cy="50" rx="15" ry="35" fill="none" stroke="#60a5fa" strokeWidth="2"/>
+      <ellipse cx="50" cy="50" rx="35" ry="15" fill="none" stroke="#60a5fa" strokeWidth="2"/>
+      <line x1="15" y1="50" x2="85" y2="50" stroke="#93c5fd" strokeWidth="2"/>
+      <circle cx="50" cy="20" r="4" fill="#fbbf24"/>
+      <circle cx="50" cy="80" r="4" fill="#fbbf24"/>
+      <circle cx="20" cy="50" r="4" fill="#fbbf24"/>
+      <circle cx="80" cy="50" r="4" fill="#fbbf24"/>
+    </svg>
+  );
+}
+
+export function DigitalWalletIcon({ className = "w-16 h-16" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="15" y="30" width="70" height="45" rx="4" fill="#1e40af" stroke="#3b82f6" strokeWidth="2"/>
+      <rect x="20" y="40" width="60" height="25" rx="3" fill="#3b82f6"/>
+      <circle cx="70" cy="52.5" r="8" fill="#60a5fa"/>
+      <path d="M 30 50 L 35 55 L 45 45" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+      <rect x="25" y="20" width="50" height="15" rx="2" fill="#10b981" stroke="#059669" strokeWidth="1"/>
+      <text x="50" y="30" fontSize="10" fill="white" textAnchor="middle" fontWeight="bold">DIGITAL</text>
+    </svg>
+  );
+}
+
+export function LoanCalculatorIcon({ className = "w-16 h-16" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="15" width="60" height="70" rx="4" fill="#1e40af" stroke="#3b82f6" strokeWidth="2"/>
+      <rect x="25" y="22" width="50" height="15" rx="2" fill="#60a5fa"/>
+      <circle cx="35" cy="50" r="3" fill="#93c5fd"/>
+      <circle cx="50" cy="50" r="3" fill="#93c5fd"/>
+      <circle cx="65" cy="50" r="3" fill="#93c5fd"/>
+      <circle cx="35" cy="62" r="3" fill="#93c5fd"/>
+      <circle cx="50" cy="62" r="3" fill="#93c5fd"/>
+      <circle cx="65" cy="62" r="3" fill="#93c5fd"/>
+      <circle cx="35" cy="74" r="3" fill="#93c5fd"/>
+      <rect x="47" y="71" width="21" height="6" rx="1" fill="#10b981"/>
+      <text x="50" y="29" fontSize="8" fill="white" textAnchor="middle" fontWeight="bold">LOAN CALC</text>
+    </svg>
+  );
+}
+
+export function SecureTransactionIcon({ className = "w-16 h-16" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="15" y="40" width="30" height="35" rx="3" fill="#3b82f6" stroke="#1e40af" strokeWidth="2"/>
+      <rect x="55" y="40" width="30" height="35" rx="3" fill="#10b981" stroke="#059669" strokeWidth="2"/>
+      <path d="M 45 57.5 L 55 57.5" stroke="#fbbf24" strokeWidth="3" markerEnd="url(#arrowyellow)"/>
+      <defs>
+        <marker id="arrowyellow" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L0,6 L9,3 z" fill="#fbbf24"/>
+        </marker>
+      </defs>
+      <path d="M 30 30 L 40 20 L 40 30 C 40 35 35 40 30 40 Z" fill="#1e40af" stroke="#3b82f6" strokeWidth="1"/>
+      <circle cx="70" cy="25" r="10" fill="#fbbf24" stroke="#f59e0b" strokeWidth="2"/>
+      <path d="M 67 25 L 70 28 L 76 22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+    </svg>
+  );
+}
