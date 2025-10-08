@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../contexts/AppContext';
 import { Link } from '../router/Router';
-import { Menu, X, ChevronDown, Shield, Clock, Wifi, WifiOff, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, Shield, Clock, Wifi, WifiOff, Globe, Activity } from 'lucide-react';
 import { Language } from '../utils/translations';
 
 export function Header() {
@@ -25,6 +25,13 @@ export function Header() {
     { code: 'es', name: 'Español' },
     { code: 'fr', name: 'Français' },
     { code: 'de', name: 'Deutsch' },
+    { code: 'zh', name: '中文' },
+    { code: 'ar', name: 'العربية' },
+    { code: 'pt', name: 'Português' },
+    { code: 'ja', name: '日本語' },
+    { code: 'ru', name: 'Русский' },
+    { code: 'hi', name: 'हिन्दी' },
+    { code: 'it', name: 'Italiano' },
   ];
 
   const menuItems = [
@@ -85,54 +92,60 @@ export function Header() {
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex flex-wrap items-center gap-6">
               {/* Secure Connection */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 opacity-70">
                 <Shield className="w-4 h-4 text-green-400" />
-                <span className="font-medium">{t('header.secureConnection')}</span>
+                <span className="text-slate-300">{t('header.secureConnection')}</span>
                 <span className="text-green-400">{config.security.sslEncryption}</span>
               </div>
 
               {/* Online Status */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 opacity-70">
                 {isOnline ? (
                   <>
-                    <Wifi className="w-4 h-4 text-green-400" />
-                    <span className="relative flex items-center">
-                      <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400"></span>
-                    </span>
-                    <span className="text-green-400 font-medium">{t('header.online')}</span>
+                    <Wifi className="w-4 h-4 text-green-400 animate-pulse" />
+                    <span className="text-slate-300">{t('header.online')}</span>
                   </>
                 ) : (
                   <>
                     <WifiOff className="w-4 h-4 text-red-400" />
-                    <span className="relative flex items-center">
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-red-400"></span>
-                    </span>
-                    <span className="text-red-400 font-medium">{t('header.offline')}</span>
+                    <span className="text-red-400">{t('header.offline')}</span>
                   </>
                 )}
               </div>
 
-              {/* Session Time */}
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-blue-400" />
-                <span>{t('header.session')}:</span>
-                <span className="font-mono text-blue-400">{formatTime(currentTime)}</span>
-              </div>
-            </div>
+              {/* Session Secure Indicator */}
+              <div className="flex items-center gap-2 opacity-70 group relative">
+  {/* Session Secure Indicator */}
+  <Activity className="w-4 h-4 text-green-400 animate-pulse" /> 
+  <span className="text-slate-300">
+    {t('header.sessionSecure')}
+  </span>
+
+  {/* Show session load time */}
+  <div className="flex items-center gap-1 text-xs text-slate-400 ml-2">
+    <Clock className="w-3 h-3 text-slate-400" />
+    <span>{sessionLoadTime}</span>
+    {/* sessionLoadTime should be a formatted string like "3:42 PM" */}
+  </div>
+
+  {/* Tooltip */}
+  <div className="absolute left-0 top-full mt-2 w-64 bg-slate-800 text-white text-xs rounded-lg shadow-xl p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+    <p>{t('header.sessionTooltip')}</p>
+  </div>
+</div>
 
             {/* Language Selector */}
             <div className="relative">
               <button
                 onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
-                className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+                className="flex items-center gap-2 hover:text-blue-400 transition-colors opacity-70 hover:opacity-100"
               >
                 <Globe className="w-4 h-4" />
-                <span>{languages.find(l => l.code === currentLanguage)?.name}</span>
+                <span className="text-slate-300">{languages.find(l => l.code === currentLanguage)?.name}</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               {languageDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white text-slate-900 rounded-lg shadow-xl z-50">
+                <div className="absolute right-0 mt-2 w-48 bg-white text-slate-900 rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
@@ -140,7 +153,7 @@ export function Header() {
                         setLanguage(lang.code as Language);
                         setLanguageDropdownOpen(false);
                       }}
-                      className={`block w-full text-left px-4 py-2 hover:bg-slate-100 first:rounded-t-lg last:rounded-b-lg ${
+                      className={`block w-full text-left px-4 py-2.5 hover:bg-slate-100 transition-colors first:rounded-t-lg last:rounded-b-lg ${
                         currentLanguage === lang.code ? 'bg-blue-50 text-blue-600 font-medium' : ''
                       }`}
                     >
@@ -159,15 +172,15 @@ export function Header() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
+            <Link to="/" className="flex items-center gap-4 group">
               <img
                 src="/images/icons8-bank-48.png"
                 alt={config.bankName}
                 className="h-12 w-12 transition-transform group-hover:scale-110"
               />
-              <div>
-                <h1 className="text-2xl font-bold text-slate-900">{config.bankName}</h1>
-                <p className="text-xs text-slate-600">Secure. Trusted. Modern.</p>
+              <div className="leading-tight">
+                <h1 className="text-2xl font-bold text-slate-900 tracking-tight">{config.bankName}</h1>
+                <p className="text-xs text-slate-600 mt-0.5">Secure. Trusted. Modern.</p>
               </div>
             </Link>
 
@@ -215,7 +228,7 @@ export function Header() {
                 href={config.userRegistrationUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30"
+                className="px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30 whitespace-nowrap font-medium"
               >
                 {t('home.openAccount')}
               </a>

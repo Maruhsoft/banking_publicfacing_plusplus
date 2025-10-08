@@ -21,7 +21,9 @@
       "secureConnection": "Secure Connection",
       "online": "Online",
       "offline": "Offline",
-      "session": "Session"
+      "session": "Session",
+      "sessionSecure": "Session Secure",
+      "sessionTooltip": "For your safety, sessions automatically end after 10 minutes of inactivity"
     },
     "footer": {
       "contact": "Contact Us",
@@ -57,7 +59,9 @@
       "secureConnection": "Conexión Segura",
       "online": "En Línea",
       "offline": "Desconectado",
-      "session": "Sesión"
+      "session": "Sesión",
+      "sessionSecure": "Sesión Segura",
+      "sessionTooltip": "Por su seguridad, las sesiones finalizan automáticamente después de 10 minutos de inactividad"
     },
     "footer": {
       "contact": "Contáctenos",
@@ -93,7 +97,9 @@
       "secureConnection": "Connexion Sécurisée",
       "online": "En Ligne",
       "offline": "Hors Ligne",
-      "session": "Session"
+      "session": "Session",
+      "sessionSecure": "Session Sécurisée",
+      "sessionTooltip": "Pour votre sécurité, les sessions se terminent automatiquement après 10 minutes d'inactivité"
     },
     "footer": {
       "contact": "Nous Contacter",
@@ -129,7 +135,9 @@
       "secureConnection": "Sichere Verbindung",
       "online": "Online",
       "offline": "Offline",
-      "session": "Sitzung"
+      "session": "Sitzung",
+      "sessionSecure": "Sitzung Sicher",
+      "sessionTooltip": "Zu Ihrer Sicherheit enden Sitzungen automatisch nach 10 Minuten Inaktivität"
     },
     "footer": {
       "contact": "Kontaktieren Sie Uns",
@@ -141,6 +149,272 @@
       "privacy": "Datenschutzrichtlinie",
       "terms": "Geschäftsbedingungen",
       "copyright": "Alle Rechte vorbehalten."
+    }
+  },
+  "zh": {
+    "nav": {
+      "personalBanking": "个人银行业务",
+      "businessBanking": "企业银行业务",
+      "digitalBanking": "数字银行业务",
+      "investmentWealth": "投资与财富",
+      "support": "支持"
+    },
+    "home": {
+      "heroTitle": "欢迎来到现代银行",
+      "heroSubtitle": "安全、创新、始终陪伴您",
+      "trustTitle": "数百万人的信赖",
+      "trustSubtitle": "受监管:",
+      "getStarted": "开始使用",
+      "learnMore": "了解更多",
+      "openAccount": "开设账户",
+      "login": "登录"
+    },
+    "header": {
+      "secureConnection": "安全连接",
+      "online": "在线",
+      "offline": "离线",
+      "session": "会话",
+      "sessionSecure": "会话安全",
+      "sessionTooltip": "为了您的安全,会话在10分钟不活动后自动结束"
+    },
+    "footer": {
+      "contact": "联系我们",
+      "headOffice": "总部",
+      "phone": "电话",
+      "email": "电子邮件",
+      "quickLinks": "快速链接",
+      "legal": "法律",
+      "privacy": "隐私政策",
+      "terms": "条款与条件",
+      "copyright": "版权所有。"
+    }
+  },
+  "ar": {
+    "nav": {
+      "personalBanking": "الخدمات المصرفية الشخصية",
+      "businessBanking": "الخدمات المصرفية للأعمال",
+      "digitalBanking": "الخدمات المصرفية الرقمية",
+      "investmentWealth": "الاستثمار والثروة",
+      "support": "الدعم"
+    },
+    "home": {
+      "heroTitle": "مرحبا بكم في الخدمات المصرفية الحديثة",
+      "heroSubtitle": "آمن ومبتكر ودائما إلى جانبك",
+      "trustTitle": "موثوق به من قبل الملايين",
+      "trustSubtitle": "منظم من قبل:",
+      "getStarted": "ابدأ",
+      "learnMore": "اعرف المزيد",
+      "openAccount": "افتح حساب",
+      "login": "تسجيل الدخول"
+    },
+    "header": {
+      "secureConnection": "اتصال آمن",
+      "online": "متصل",
+      "offline": "غير متصل",
+      "session": "الجلسة",
+      "sessionSecure": "جلسة آمنة",
+      "sessionTooltip": "من أجل سلامتك، تنتهي الجلسات تلقائيًا بعد 10 دقائق من عدم النشاط"
+    },
+    "footer": {
+      "contact": "اتصل بنا",
+      "headOffice": "المقر الرئيسي",
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني",
+      "quickLinks": "روابط سريعة",
+      "legal": "قانوني",
+      "privacy": "سياسة الخصوصية",
+      "terms": "الشروط والأحكام",
+      "copyright": "كل الحقوق محفوظة."
+    }
+  },
+  "pt": {
+    "nav": {
+      "personalBanking": "Banco Pessoal",
+      "businessBanking": "Banco Empresarial",
+      "digitalBanking": "Banco Digital",
+      "investmentWealth": "Investimento e Riqueza",
+      "support": "Suporte"
+    },
+    "home": {
+      "heroTitle": "Bem-vindo ao Banco Moderno",
+      "heroSubtitle": "Seguro, inovador e sempre ao seu lado",
+      "trustTitle": "Confiado por Milhões",
+      "trustSubtitle": "Regulado por:",
+      "getStarted": "Começar",
+      "learnMore": "Saiba Mais",
+      "openAccount": "Abrir uma Conta",
+      "login": "Entrar"
+    },
+    "header": {
+      "secureConnection": "Conexão Segura",
+      "online": "Online",
+      "offline": "Offline",
+      "session": "Sessão",
+      "sessionSecure": "Sessão Segura",
+      "sessionTooltip": "Para sua segurança, as sessões terminam automaticamente após 10 minutos de inatividade"
+    },
+    "footer": {
+      "contact": "Contate-nos",
+      "headOffice": "Sede",
+      "phone": "Telefone",
+      "email": "E-mail",
+      "quickLinks": "Links Rápidos",
+      "legal": "Legal",
+      "privacy": "Política de Privacidade",
+      "terms": "Termos e Condições",
+      "copyright": "Todos os direitos reservados."
+    }
+  },
+  "ja": {
+    "nav": {
+      "personalBanking": "個人向け銀行業務",
+      "businessBanking": "法人向け銀行業務",
+      "digitalBanking": "デジタルバンキング",
+      "investmentWealth": "投資と資産",
+      "support": "サポート"
+    },
+    "home": {
+      "heroTitle": "現代の銀行へようこそ",
+      "heroSubtitle": "安全で革新的、そして常にあなたのそばに",
+      "trustTitle": "何百万人もの信頼",
+      "trustSubtitle": "規制:",
+      "getStarted": "始める",
+      "learnMore": "詳細を見る",
+      "openAccount": "口座を開く",
+      "login": "ログイン"
+    },
+    "header": {
+      "secureConnection": "安全な接続",
+      "online": "オンライン",
+      "offline": "オフライン",
+      "session": "セッション",
+      "sessionSecure": "セッション保護",
+      "sessionTooltip": "安全のため、10分間操作がない場合、セッションは自動的に終了します"
+    },
+    "footer": {
+      "contact": "お問い合わせ",
+      "headOffice": "本社",
+      "phone": "電話",
+      "email": "メール",
+      "quickLinks": "クイックリンク",
+      "legal": "法務",
+      "privacy": "プライバシーポリシー",
+      "terms": "利用規約",
+      "copyright": "全著作権所有。"
+    }
+  },
+  "ru": {
+    "nav": {
+      "personalBanking": "Личные банковские услуги",
+      "businessBanking": "Корпоративные банковские услуги",
+      "digitalBanking": "Цифровой банкинг",
+      "investmentWealth": "Инвестиции и богатство",
+      "support": "Поддержка"
+    },
+    "home": {
+      "heroTitle": "Добро пожаловать в современный банкинг",
+      "heroSubtitle": "Безопасный, инновационный и всегда рядом с вами",
+      "trustTitle": "Доверие миллионов",
+      "trustSubtitle": "Регулируется:",
+      "getStarted": "Начать",
+      "learnMore": "Узнать больше",
+      "openAccount": "Открыть счет",
+      "login": "Войти"
+    },
+    "header": {
+      "secureConnection": "Безопасное соединение",
+      "online": "Онлайн",
+      "offline": "Оффлайн",
+      "session": "Сеанс",
+      "sessionSecure": "Защищенный сеанс",
+      "sessionTooltip": "Для вашей безопасности сеансы автоматически завершаются через 10 минут бездействия"
+    },
+    "footer": {
+      "contact": "Свяжитесь с нами",
+      "headOffice": "Главный офис",
+      "phone": "Телефон",
+      "email": "Электронная почта",
+      "quickLinks": "Быстрые ссылки",
+      "legal": "Правовая информация",
+      "privacy": "Политика конфиденциальности",
+      "terms": "Условия использования",
+      "copyright": "Все права защищены."
+    }
+  },
+  "hi": {
+    "nav": {
+      "personalBanking": "व्यक्तिगत बैंकिंग",
+      "businessBanking": "व्यावसायिक बैंकिंग",
+      "digitalBanking": "डिजिटल बैंकिंग",
+      "investmentWealth": "निवेश और धन",
+      "support": "सहायता"
+    },
+    "home": {
+      "heroTitle": "आधुनिक बैंकिंग में आपका स्वागत है",
+      "heroSubtitle": "सुरक्षित, नवीन, और हमेशा आपके साथ",
+      "trustTitle": "लाखों द्वारा विश्वसनीय",
+      "trustSubtitle": "द्वारा विनियमित:",
+      "getStarted": "शुरू करें",
+      "learnMore": "और जानें",
+      "openAccount": "खाता खोलें",
+      "login": "लॉगिन"
+    },
+    "header": {
+      "secureConnection": "सुरक्षित कनेक्शन",
+      "online": "ऑनलाइन",
+      "offline": "ऑफलाइन",
+      "session": "सत्र",
+      "sessionSecure": "सुरक्षित सत्र",
+      "sessionTooltip": "आपकी सुरक्षा के लिए, 10 मिनट की निष्क्रियता के बाद सत्र स्वचालित रूप से समाप्त हो जाते हैं"
+    },
+    "footer": {
+      "contact": "हमसे संपर्क करें",
+      "headOffice": "मुख्य कार्यालय",
+      "phone": "फ़ोन",
+      "email": "ईमेल",
+      "quickLinks": "त्वरित लिंक",
+      "legal": "कानूनी",
+      "privacy": "गोपनीयता नीति",
+      "terms": "नियम और शर्तें",
+      "copyright": "सर्वाधिकार सुरक्षित।"
+    }
+  },
+  "it": {
+    "nav": {
+      "personalBanking": "Banking Personale",
+      "businessBanking": "Banking Aziendale",
+      "digitalBanking": "Banking Digitale",
+      "investmentWealth": "Investimenti e Patrimonio",
+      "support": "Supporto"
+    },
+    "home": {
+      "heroTitle": "Benvenuto nel Banking Moderno",
+      "heroSubtitle": "Sicuro, innovativo e sempre al tuo fianco",
+      "trustTitle": "La Fiducia di Milioni",
+      "trustSubtitle": "Regolamentato da:",
+      "getStarted": "Inizia",
+      "learnMore": "Scopri di Più",
+      "openAccount": "Apri un Conto",
+      "login": "Accedi"
+    },
+    "header": {
+      "secureConnection": "Connessione Sicura",
+      "online": "Online",
+      "offline": "Offline",
+      "session": "Sessione",
+      "sessionSecure": "Sessione Sicura",
+      "sessionTooltip": "Per la tua sicurezza, le sessioni terminano automaticamente dopo 10 minuti di inattività"
+    },
+    "footer": {
+      "contact": "Contattaci",
+      "headOffice": "Sede Centrale",
+      "phone": "Telefono",
+      "email": "Email",
+      "quickLinks": "Link Rapidi",
+      "legal": "Legale",
+      "privacy": "Informativa sulla Privacy",
+      "terms": "Termini e Condizioni",
+      "copyright": "Tutti i diritti riservati."
     }
   }
 }

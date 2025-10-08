@@ -1,4 +1,4 @@
-export type Language = 'en' | 'es' | 'fr' | 'de';
+export type Language = 'en' | 'es' | 'fr' | 'de' | 'zh' | 'ar' | 'pt' | 'ja' | 'ru' | 'hi' | 'it';
 
 export interface Translations {
   [key: string]: {
