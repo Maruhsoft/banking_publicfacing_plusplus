@@ -5,21 +5,41 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply font-sans text-secondary-900 antialiased;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #f8fafc 50%, #e0e7ff 75%, #fce7f3 100%);
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+    background-attachment: fixed;
+  }
+
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+    letter-spacing: -0.02em;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl font-bold leading-tight;
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-bold leading-tight;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold leading-tight;
   }
 
   h3 {
@@ -28,6 +48,15 @@
 
   p {
     @apply leading-relaxed;
+    line-height: 1.7;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-blue-600 rounded;
+  }
+
+  button, a {
+    @apply transition-all duration-300;
   }
 }
 
@@ -198,6 +227,27 @@
     }
     to {
       transform: rotate(360deg);
+    }
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
 

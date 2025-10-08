@@ -27,11 +27,11 @@ export function ProcessSteps({ steps, title }: ProcessStepsProps) {
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-blue-400 rounded-full"></div>
               </div>
             )}
-            <div className="relative bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <div className="relative bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-200/50 text-center group">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
                 <step.icon className="w-8 h-8 text-white" />
               </div>
-              <div className="absolute -top-3 -right-3 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
+              <div className="absolute -top-3 -right-3 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg ring-4 ring-white">
                 {step.number}
               </div>
               <h4 className="text-lg font-bold text-slate-900 mb-2">{step.title}</h4>

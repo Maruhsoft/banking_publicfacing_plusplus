@@ -54,7 +54,7 @@ export function StatCounter({ end, duration = 2000, suffix = '', prefix = '', la
   }, [isVisible, end, duration]);
 
   return (
-    <div ref={ref} className="text-center p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
+    <div ref={ref} className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1">
       {Icon && (
         <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
           <Icon className="w-7 h-7 text-blue-600" />

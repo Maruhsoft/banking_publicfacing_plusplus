@@ -36,7 +36,7 @@ export function BenefitCard({ icon: Icon, title, description, color = 'blue', fe
   const colors = colorClasses[color];
 
   return (
-    <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden border border-slate-100">
+    <div className="group bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 overflow-hidden border border-slate-200/50">
       <div className={`h-2 bg-gradient-to-r ${colors.bg}`}></div>
       <div className="p-8">
         <div className={`w-16 h-16 ${colors.icon} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>

@@ -4,6 +4,7 @@ import { Router } from './router/Router';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { SmartSuppChat } from './components/SmartSuppChat';
+import { ScrollToTop } from './components/ScrollToTop';
 import { Home } from './pages/Home';
 
 // Personal Banking
@@ -84,6 +85,7 @@ function App() {
         </main>
         <Footer />
         <SmartSuppChat />
+        <ScrollToTop />
       </div>
     </AppProvider>
   );

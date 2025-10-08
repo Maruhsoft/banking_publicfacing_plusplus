@@ -3,7 +3,7 @@ import { useApp } from '../contexts/AppContext';
 import { Link } from '../router/Router';
 import { HeroCarousel } from '../components/HeroCarousel';
 import { SecureVaultIcon, MoneyTransferIcon, InvestmentGrowthIcon, ShieldCheckIcon } from '../components/BankingIcons';
-import { TestimonialCard } from '../components/TestimonialCard';
+import { TestimonialCarousel } from '../components/TestimonialCarousel';
 import { ComparisonTable } from '../components/ComparisonTable';
 import { StatCounter } from '../components/StatCounter';
 import { InteractiveCalculator } from '../components/InteractiveCalculator';
@@ -92,10 +92,10 @@ export function Home() {
   ];
 
   const stats = [
-    { number: '2M+', label: 'Active Customers' },
-    { number: '$50B+', label: 'Assets Managed' },
-    { number: '150+', label: 'Countries Served' },
-    { number: '99.9%', label: 'Uptime' },
+    { number: '2M+', label: 'Active Customers', emoji: '🚀' },
+    { number: '$50B+', label: 'Assets Managed', emoji: '💰' },
+    { number: '150+', label: 'Countries Served', emoji: '🌍' },
+    { number: '99.9%', label: 'Uptime', emoji: '⚡' },
   ];
 
   const carouselSlides = [
@@ -196,7 +196,13 @@ export function Home() {
     },
   ];
 
-  const testimonials: TestimonialProps[] = [
+  interface TestimonialType {
+    name: string;
+    role: string;
+    content: string;
+  }
+
+  const testimonials: TestimonialType[] = [
   {
     name: "Sophia",
     role: "Retail Banking Client",
@@ -292,6 +298,30 @@ export function Home() {
         </div>
       </section>
 
+      {/* Banking Hero Image Section */}
+      <section className="py-16 bg-gradient-to-b from-white to-slate-50">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-16">
+            <div className="order-2 md:order-1">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Banking Made Simple</h2>
+              <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                Experience modern banking with cutting-edge technology, exceptional service, and security you can trust. Manage your finances seamlessly from anywhere in the world.
+              </p>
+              <Link to="/personal-banking/open-account" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl">
+                Get Started <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+            <div className="order-1 md:order-2">
+              <img
+                src="https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Modern banking experience"
+                className="rounded-2xl shadow-2xl w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Products Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -339,7 +369,7 @@ export function Home() {
             {trustBadges.map((badge, idx) => (
               <div
                 key={idx}
-                className="bg-white p-6 rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1 border border-slate-100 shiny-card glow-on-hover"
+                className="bg-white/80 backdrop-blur-sm p-6 rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1 border border-slate-200/50 shiny-card glow-on-hover"
               >
                 <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <badge.icon className="w-7 h-7 text-blue-600" />
@@ -372,11 +402,16 @@ export function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-10 right-10 w-64 h-64 bg-blue-300 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, idx) => (
-              <div key={idx} className="text-center">
+              <div key={idx} className="text-center transform hover:scale-110 transition-transform">
+                <div className="text-5xl mb-2">{stat.emoji}</div>
                 <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
                 <div className="text-blue-100">{stat.label}</div>
               </div>
@@ -399,13 +434,13 @@ export function Home() {
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 duration-300 border border-slate-100 shiny-card glow-on-hover"
+                className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 duration-300 border border-slate-200/50 shiny-card glow-on-hover"
               >
                 <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <feature.icon className="w-7 h-7 text-blue-600" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
-                <p className="text-slate-600">{feature.description}</p>
+                <p className="text-slate-600 leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -422,12 +457,12 @@ export function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {services.map((service, idx) => (
               <Link
                 key={idx}
                 to={service.link}
-                className="group bg-gradient-to-br from-white to-blue-50 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all hover:shadow-xl shiny-card glow-on-hover"
+                className="group bg-gradient-to-br from-white/80 to-blue-50/80 backdrop-blur-sm p-8 rounded-xl border-2 border-slate-200/50 hover:border-blue-400 transition-all hover:shadow-xl shiny-card glow-on-hover"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -437,7 +472,7 @@ export function Home() {
                     <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-slate-600 mb-3">{service.description}</p>
+                    <p className="text-slate-600 mb-3 leading-relaxed">{service.description}</p>
                     <span className="text-blue-600 font-medium flex items-center gap-2 group-hover:gap-3 transition-all">
                       Explore <ArrowRight className="w-4 h-4" />
                     </span>
@@ -445,6 +480,30 @@ export function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Digital banking solutions"
+                className="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Investment planning"
+                className="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div className="overflow-hidden rounded-2xl shadow-lg">
+              <img
+                src="https://images.pexels.com/photos/6120214/pexels-photo-6120214.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Business banking"
+                className="w-full h-64 object-cover hover:scale-110 transition-transform duration-500"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -564,11 +623,7 @@ export function Home() {
               Real stories from satisfied customers who trust us with their finances
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, idx) => (
-              <TestimonialCard key={idx} {...testimonial} />
-            ))}
-          </div>
+          <TestimonialCarousel testimonials={testimonials} />
         </div>
       </section>
 
@@ -600,12 +655,12 @@ export function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-200/50">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
                 <Wallet className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Personal Loans</h3>
-              <p className="text-slate-600 mb-4">Flexible loan options with competitive rates starting from 5.99% APR</p>
+              <p className="text-slate-600 mb-4 leading-relaxed">Flexible loan options with competitive rates starting from 5.99% APR</p>
               <ul className="space-y-2 mb-4">
                 <li className="flex items-center gap-2 text-sm text-slate-700">
                   <CheckCircle className="w-4 h-4 text-green-600" />
@@ -625,12 +680,12 @@ export function Home() {
               </Link>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-200/50">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4">
                 <Briefcase className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Business Banking</h3>
-              <p className="text-slate-600 mb-4">Powerful tools and services to help your business thrive and grow</p>
+              <p className="text-slate-600 mb-4 leading-relaxed">Powerful tools and services to help your business thrive and grow</p>
               <ul className="space-y-2 mb-4">
                 <li className="flex items-center gap-2 text-sm text-slate-700">
                   <CheckCircle className="w-4 h-4 text-green-600" />
@@ -650,12 +705,12 @@ export function Home() {
               </Link>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-100">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 border border-slate-200/50">
               <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4">
                 <HandCoins className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">Wealth Management</h3>
-              <p className="text-slate-600 mb-4">Expert guidance to help you build and preserve your wealth</p>
+              <p className="text-slate-600 mb-4 leading-relaxed">Expert guidance to help you build and preserve your wealth</p>
               <ul className="space-y-2 mb-4">
                 <li className="flex items-center gap-2 text-sm text-slate-700">
                   <CheckCircle className="w-4 h-4 text-green-600" />
@@ -678,16 +733,53 @@ export function Home() {
         </div>
       </section>
 
+      {/* Newsletter Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Informed</h2>
+            <p className="text-xl text-blue-100 mb-8">
+              Subscribe to our newsletter for the latest updates on products, offers, and financial tips
+            </p>
+            <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-6 py-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                aria-label="Email address"
+              />
+              <button
+                type="submit"
+                className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p className="text-sm text-blue-200 mt-4">
+              By subscribing, you agree to receive marketing emails. Unsubscribe anytime.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute -top-20 -left-20 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-blue-300 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Ready to Get Started?</h2>
+          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
             Join millions who trust {config.bankName} for their banking needs
           </p>
           <a
             href={config.userRegistrationUrl}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded font-semibold hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105"
           >
             {t('home.openAccount')}
             <ArrowRight className="w-5 h-5" />
