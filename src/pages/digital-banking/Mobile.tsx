@@ -30,14 +30,15 @@ export function Mobile() {
     <PageTemplate
       title="Mobile Banking App"
       subtitle="Award-winning mobile app for iOS and Android"
-      gradient="from-violet-600 to-violet-700"
+      gradient="from-slate-700 to-slate-800"
+      imageUrl="https://images.pexels.com/photos/4968630/pexels-photo-4968630.jpeg?auto=compress&cs=tinysrgb&w=1920"
     >
       <ContentSection>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, idx) => (
-            <div key={idx} className="bg-white rounded-xl shadow-lg p-6 text-center">
-              <div className="w-14 h-14 bg-violet-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <feature.icon className="w-7 h-7 text-violet-600" />
+            <div key={idx} className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-all hover:-translate-y-1 animate-slide-in">
+              <div className="w-14 h-14 bg-gradient-to-br from-slate-600 to-slate-700 rounded-lg flex items-center justify-center mx-auto mb-4 animate-float">
+                <feature.icon className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">{feature.title}</h3>
               <p className="text-slate-600">{feature.description}</p>

@@ -27,6 +27,7 @@ export function FixedDeposits() {
       title="Fixed Deposits"
       subtitle="Secure your future with guaranteed returns on your investments"
       gradient="from-amber-600 to-amber-700"
+      imageUrl="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=1920"
     >
       <ContentSection title="Current Rates">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

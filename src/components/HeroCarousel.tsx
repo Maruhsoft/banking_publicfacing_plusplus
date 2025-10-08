@@ -47,7 +47,7 @@ export function HeroCarousel({ slides, autoPlayInterval = 5000 }: HeroCarouselPr
           }`}
         >
           <div className={`h-full ${slide.bgColor} bg-gradient-to-br`}>
-            <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-20"></div>
+            <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/730547/pexels-photo-730547.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-20"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-900/95 via-blue-900/70 to-transparent"></div>
 
             <div className="container mx-auto px-4 py-20 md:py-32 relative z-10 h-full flex items-center">

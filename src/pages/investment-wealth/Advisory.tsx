@@ -19,7 +19,8 @@ export function Advisory() {
     <PageTemplate
       title="Wealth Advisory"
       subtitle="Expert guidance from certified financial advisors"
-      gradient="from-indigo-600 to-indigo-700"
+      gradient="from-slate-700 to-slate-800"
+      imageUrl="https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=1920"
     >
       <ContentSection>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

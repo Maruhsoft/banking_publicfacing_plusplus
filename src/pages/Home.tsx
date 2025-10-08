@@ -2,6 +2,7 @@ import React from 'react';
 import { useApp } from '../contexts/AppContext';
 import { Link } from '../router/Router';
 import { HeroCarousel } from '../components/HeroCarousel';
+import { SecureVaultIcon, MoneyTransferIcon, InvestmentGrowthIcon, ShieldCheckIcon } from '../components/BankingIcons';
 import {
   Shield,
   TrendingUp,
@@ -323,16 +324,41 @@ export function Home() {
         </div>
       </section>
 
-      {/* Security Banner */}
-      <section className="py-16 bg-slate-900 text-white">
-        <div className="container mx-auto px-4">
+      {/* Security Banner with SVG Icons */}
+      <section className="py-16 bg-slate-900 text-white relative overflow-hidden">
+        <div className="absolute top-10 left-10 opacity-10">
+          <SecureVaultIcon className="w-32 h-32" />
+        </div>
+        <div className="absolute bottom-10 right-10 opacity-10">
+          <ShieldCheckIcon className="w-32 h-32" />
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Lock className="w-16 h-16 text-blue-400 mx-auto mb-6" />
+            <div className="animate-float mb-6 inline-block">
+              <ShieldCheckIcon className="w-20 h-20" />
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Your Security is Our Priority</h2>
             <p className="text-xl text-slate-300 mb-8">
               Bank-grade {config.security.sslEncryption} encryption, multi-factor authentication, and 24/7 fraud
               monitoring keep your money safe
             </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-slate-800 p-6 rounded-xl animate-slide-in">
+                <Lock className="w-10 h-10 text-green-400 mx-auto mb-3" />
+                <h3 className="font-bold text-lg mb-2">Encrypted</h3>
+                <p className="text-slate-400 text-sm">256-bit SSL encryption</p>
+              </div>
+              <div className="bg-slate-800 p-6 rounded-xl animate-slide-in" style={{ animationDelay: '0.1s' }}>
+                <Shield className="w-10 h-10 text-blue-400 mx-auto mb-3" />
+                <h3 className="font-bold text-lg mb-2">Protected</h3>
+                <p className="text-slate-400 text-sm">24/7 fraud monitoring</p>
+              </div>
+              <div className="bg-slate-800 p-6 rounded-xl animate-slide-in" style={{ animationDelay: '0.2s' }}>
+                <Award className="w-10 h-10 text-yellow-400 mx-auto mb-3" />
+                <h3 className="font-bold text-lg mb-2">Trusted</h3>
+                <p className="text-slate-400 text-sm">FDIC insured deposits</p>
+              </div>
+            </div>
             <Link
               to="/security"
               className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"

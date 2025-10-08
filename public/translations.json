@@ -22,7 +22,7 @@
       "online": "Online",
       "offline": "Offline",
       "session": "Session",
-      "sessionSecure": "Session Secure",
+      "sessionSecure": "Current Session",
       "sessionTooltip": "For your safety, sessions automatically end after 10 minutes of inactivity"
     },
     "footer": {
@@ -60,7 +60,7 @@
       "online": "En Línea",
       "offline": "Desconectado",
       "session": "Sesión",
-      "sessionSecure": "Sesión Segura",
+      "sessionSecure": "Sesión Actual",
       "sessionTooltip": "Por su seguridad, las sesiones finalizan automáticamente después de 10 minutos de inactividad"
     },
     "footer": {
@@ -98,7 +98,7 @@
       "online": "En Ligne",
       "offline": "Hors Ligne",
       "session": "Session",
-      "sessionSecure": "Session Sécurisée",
+      "sessionSecure": "Session Actuelle",
       "sessionTooltip": "Pour votre sécurité, les sessions se terminent automatiquement après 10 minutes d'inactivité"
     },
     "footer": {
@@ -136,7 +136,7 @@
       "online": "Online",
       "offline": "Offline",
       "session": "Sitzung",
-      "sessionSecure": "Sitzung Sicher",
+      "sessionSecure": "Aktuelle Sitzung",
       "sessionTooltip": "Zu Ihrer Sicherheit enden Sitzungen automatisch nach 10 Minuten Inaktivität"
     },
     "footer": {
@@ -174,7 +174,7 @@
       "online": "在线",
       "offline": "离线",
       "session": "会话",
-      "sessionSecure": "会话安全",
+      "sessionSecure": "当前会话",
       "sessionTooltip": "为了您的安全,会话在10分钟不活动后自动结束"
     },
     "footer": {
@@ -212,7 +212,7 @@
       "online": "متصل",
       "offline": "غير متصل",
       "session": "الجلسة",
-      "sessionSecure": "جلسة آمنة",
+      "sessionSecure": "الجلسة الحالية",
       "sessionTooltip": "من أجل سلامتك، تنتهي الجلسات تلقائيًا بعد 10 دقائق من عدم النشاط"
     },
     "footer": {
@@ -250,7 +250,7 @@
       "online": "Online",
       "offline": "Offline",
       "session": "Sessão",
-      "sessionSecure": "Sessão Segura",
+      "sessionSecure": "Sessão Atual",
       "sessionTooltip": "Para sua segurança, as sessões terminam automaticamente após 10 minutos de inatividade"
     },
     "footer": {
@@ -288,7 +288,7 @@
       "online": "オンライン",
       "offline": "オフライン",
       "session": "セッション",
-      "sessionSecure": "セッション保護",
+      "sessionSecure": "現在のセッション",
       "sessionTooltip": "安全のため、10分間操作がない場合、セッションは自動的に終了します"
     },
     "footer": {
@@ -326,7 +326,7 @@
       "online": "Онлайн",
       "offline": "Оффлайн",
       "session": "Сеанс",
-      "sessionSecure": "Защищенный сеанс",
+      "sessionSecure": "Текущий сеанс",
       "sessionTooltip": "Для вашей безопасности сеансы автоматически завершаются через 10 минут бездействия"
     },
     "footer": {
@@ -364,7 +364,7 @@
       "online": "ऑनलाइन",
       "offline": "ऑफलाइन",
       "session": "सत्र",
-      "sessionSecure": "सुरक्षित सत्र",
+      "sessionSecure": "वर्तमान सत्र",
       "sessionTooltip": "आपकी सुरक्षा के लिए, 10 मिनट की निष्क्रियता के बाद सत्र स्वचालित रूप से समाप्त हो जाते हैं"
     },
     "footer": {
@@ -402,7 +402,7 @@
       "online": "Online",
       "offline": "Offline",
       "session": "Sessione",
-      "sessionSecure": "Sessione Sicura",
+      "sessionSecure": "Sessione Corrente",
       "sessionTooltip": "Per la tua sicurezza, le sessioni terminano automaticamente dopo 10 minuti di inattività"
     },
     "footer": {
