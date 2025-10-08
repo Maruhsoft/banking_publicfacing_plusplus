@@ -66,8 +66,8 @@ export function FixedDeposits() {
           </p>
           <a
             href={config?.userRegistrationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            
+            
             className="inline-block px-8 py-4 bg-amber-600 text-white rounded-lg font-semibold hover:bg-amber-700 transition-colors shadow-lg"
           >
             Open Account

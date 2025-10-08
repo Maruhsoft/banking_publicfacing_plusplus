@@ -80,8 +80,8 @@ export function OpenAccount() {
           </p>
           <a
             href={config?.userRegistrationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            
+            
             className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl"
           >
             Open Account Now

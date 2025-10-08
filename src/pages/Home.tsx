@@ -180,7 +180,7 @@ export function Home() {
             {featuredProducts.map((product, idx) => (
               <div
                 key={idx}
-                className="relative bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-2xl border border-slate-200 hover:border-blue-400 transition-all hover:shadow-2xl group"
+                className="relative bg-gradient-to-br from-white to-blue-50 p-8 rounded-2xl border border-slate-200 hover:border-blue-400 transition-all hover:shadow-2xl group shiny-card glow-on-hover"
               >
                 <div className={`absolute top-4 right-4 ${product.tagColor} text-white text-xs font-bold px-3 py-1 rounded-full`}>
                   {product.tag}
@@ -213,7 +213,7 @@ export function Home() {
             {trustBadges.map((badge, idx) => (
               <div
                 key={idx}
-                className="bg-white p-6 rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1"
+                className="bg-white p-6 rounded-xl text-center hover:shadow-xl transition-all hover:-translate-y-1 border border-slate-100 shiny-card glow-on-hover"
               >
                 <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <badge.icon className="w-7 h-7 text-blue-600" />
@@ -273,7 +273,7 @@ export function Home() {
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 duration-300"
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 duration-300 border border-slate-100 shiny-card glow-on-hover"
               >
                 <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <feature.icon className="w-7 h-7 text-blue-600" />
@@ -301,7 +301,7 @@ export function Home() {
               <Link
                 key={idx}
                 to={service.link}
-                className="group bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all hover:shadow-xl"
+                className="group bg-gradient-to-br from-white to-blue-50 p-8 rounded-xl border-2 border-slate-200 hover:border-blue-400 transition-all hover:shadow-xl shiny-card glow-on-hover"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -353,9 +353,7 @@ export function Home() {
           </p>
           <a
             href={config.userRegistrationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded font-semibold hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105"
           >
             {t('home.openAccount')}
             <ArrowRight className="w-5 h-5" />

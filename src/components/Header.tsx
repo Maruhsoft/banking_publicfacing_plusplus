@@ -9,15 +9,17 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
+  const [sessionStartTime] = useState(new Date());
 
   if (!config) return null;
 
-  const formatTime = (date: Date) => {
-    return date.toLocaleTimeString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-    });
+  const formatSessionTime = (date: Date) => {
+    const now = new Date();
+    const diff = Math.floor((now.getTime() - date.getTime()) / 1000);
+    const hours = Math.floor(diff / 3600);
+    const minutes = Math.floor((diff % 3600) / 60);
+    const seconds = diff % 60;
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
   };
 
   const languages = [
@@ -115,24 +117,17 @@ export function Header() {
 
               {/* Session Secure Indicator */}
               <div className="flex items-center gap-2 opacity-70 group relative">
-  {/* Session Secure Indicator */}
-  <Activity className="w-4 h-4 text-green-400 animate-pulse" /> 
-  <span className="text-slate-300">
-    {t('header.sessionSecure')}
-  </span>
+                <Activity className="w-4 h-4 text-green-400" />
+                <span className="text-slate-300">
+                  {t('header.sessionSecure')} {formatSessionTime(sessionStartTime)}
+                </span>
 
-  {/* Show session load time */}
-  <div className="flex items-center gap-1 text-xs text-slate-400 ml-2">
-    <Clock className="w-3 h-3 text-slate-400" />
-    <span>{sessionLoadTime}</span>
-    {/* sessionLoadTime should be a formatted string like "3:42 PM" */}
-  </div>
-
-  {/* Tooltip */}
-  <div className="absolute left-0 top-full mt-2 w-64 bg-slate-800 text-white text-xs rounded-lg shadow-xl p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-    <p>{t('header.sessionTooltip')}</p>
-  </div>
-</div>
+                {/* Tooltip */}
+                <div className="absolute left-0 top-full mt-2 w-64 bg-slate-800 text-white text-xs rounded-lg shadow-xl p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <p>{t('header.sessionTooltip')}</p>
+                </div>
+              </div>
+            </div>
 
             {/* Language Selector */}
             <div className="relative">
@@ -172,15 +167,15 @@ export function Header() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-4 group">
+            <Link to="/" className="flex items-center gap-3 group">
               <img
                 src="/images/icons8-bank-48.png"
                 alt={config.bankName}
                 className="h-12 w-12 transition-transform group-hover:scale-110"
               />
-              <div className="leading-tight">
-                <h1 className="text-2xl font-bold text-slate-900 tracking-tight">{config.bankName}</h1>
-                <p className="text-xs text-slate-600 mt-0.5">Secure. Trusted. Modern.</p>
+              <div className="flex flex-col justify-center">
+                <h1 className="text-xl font-bold text-slate-900 tracking-tight leading-tight">{config.bankName}</h1>
+                <p className="text-xs text-slate-600 leading-tight">Secure. Trusted. Modern.</p>
               </div>
             </Link>
 
@@ -218,17 +213,13 @@ export function Header() {
             <div className="hidden lg:flex items-center gap-3">
               <a
                 href={config.userLoginUrl}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="px-6 py-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
               >
                 {t('home.login')}
               </a>
               <a
                 href={config.userRegistrationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30 whitespace-nowrap font-medium"
+                className="px-6 py-2.5 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors shadow-lg shadow-blue-600/30 whitespace-nowrap font-medium"
               >
                 {t('home.openAccount')}
               </a>
@@ -268,17 +259,13 @@ export function Header() {
               <div className="flex flex-col gap-3 mt-6 pt-6 border-t border-slate-200">
                 <a
                   href={config.userLoginUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="px-6 py-3 text-center text-blue-600 border-2 border-blue-600 rounded-lg hover:bg-blue-50 font-medium transition-colors"
                 >
                   {t('home.login')}
                 </a>
                 <a
                   href={config.userRegistrationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 text-center bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                  className="px-6 py-3 text-center bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
                 >
                   {t('home.openAccount')}
                 </a>

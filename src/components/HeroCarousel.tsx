@@ -47,25 +47,51 @@ export function HeroCarousel({ slides, autoPlayInterval = 5000 }: HeroCarouselPr
           }`}
         >
           <div className={`h-full ${slide.bgColor} bg-gradient-to-br`}>
-            <div className="absolute inset-0 bg-[url('/images/banking.jpg')] bg-cover bg-center opacity-10"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-transparent"></div>
+            <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/6863332/pexels-photo-6863332.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-20"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/95 via-blue-900/70 to-transparent"></div>
 
             <div className="container mx-auto px-4 py-20 md:py-32 relative z-10 h-full flex items-center">
-              <div className="max-w-3xl">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white animate-in fade-in slide-in-from-bottom-4 duration-700">
-                  {slide.title}
-                </h1>
-                <p className="text-xl md:text-2xl mb-8 text-blue-100 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
-                  {slide.subtitle}
-                </p>
-                <a
-                  href={slide.buttonLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-8 py-4 bg-white text-blue-900 rounded-lg font-semibold hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105"
-                >
-                  {slide.buttonText}
-                </a>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+                <div className="max-w-2xl">
+                  <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white animate-in fade-in slide-in-from-bottom-4 duration-700">
+                    {slide.title}
+                  </h1>
+                  <p className="text-xl md:text-2xl mb-8 text-blue-100 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
+                    {slide.subtitle}
+                  </p>
+                  <a
+                    href={slide.buttonLink}
+                    className="inline-flex items-center px-8 py-4 bg-white text-blue-900 rounded font-semibold hover:bg-blue-50 transition-all shadow-xl hover:shadow-2xl hover:scale-105"
+                  >
+                    {slide.buttonText}
+                  </a>
+                </div>
+
+                <div className="hidden lg:flex flex-col gap-4">
+                  <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 shadow-2xl transform hover:scale-105 transition-all">
+                    <div className="text-white">
+                      <div className="text-sm font-medium text-blue-200 mb-2">Current Interest Rate</div>
+                      <div className="text-4xl font-bold mb-1">4.5% APY</div>
+                      <div className="text-sm text-blue-200">On savings accounts</div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 shadow-2xl transform hover:scale-105 transition-all">
+                    <div className="text-white">
+                      <div className="text-sm font-medium text-blue-200 mb-2">Active Users</div>
+                      <div className="text-4xl font-bold mb-1">2M+</div>
+                      <div className="text-sm text-blue-200">Banking with confidence</div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 shadow-2xl transform hover:scale-105 transition-all">
+                    <div className="text-white">
+                      <div className="text-sm font-medium text-blue-200 mb-2">Global Reach</div>
+                      <div className="text-4xl font-bold mb-1">150+</div>
+                      <div className="text-sm text-blue-200">Countries served</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

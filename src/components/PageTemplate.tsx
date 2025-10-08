@@ -73,8 +73,8 @@ export function FeatureCard({ icon: Icon, title, description, features, action }
       {action && (
         <a
           href={action.href}
-          target="_blank"
-          rel="noopener noreferrer"
+          
+          
           className="block text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
         >
           {action.label}
